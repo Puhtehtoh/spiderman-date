@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Bubu 🕷️❤️</title>
+<title>For Aryan Bubuuu ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 *{
     margin:0;
@@ -15,79 +15,81 @@
 }
 
 body{
-    background: linear-gradient(135deg,#0f0f12,#1b1b22);
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
-    font-family:'Inter', sans-serif;
     min-height:100vh;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
 }
 
-.card{
+.page{
     width:90%;
-    max-width:600px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter: blur(18px);
-    border:1px solid rgba(255,255,255,0.08);
+    max-width:650px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
     border-radius:30px;
     padding:35px;
     text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,0.4);
-    animation:fadeIn 1s ease;
-    position:relative;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 0.6s ease;
+}
+
+.hidden{
+    display:none;
 }
 
 h1{
-    font-family:'Playfair Display', serif;
+    font-size:2rem;
     margin-bottom:15px;
-    font-size:2.2rem;
 }
 
 p{
-    color:#d8d8d8;
+    font-size:1.1rem;
     line-height:1.7;
+    color:#ddd;
 }
 
 .cat{
-    width:180px;
-    height:auto;
-    border-radius:20px;
-    margin:15px auto;
-    display:block;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-
-.corner{
-    position:absolute;
-    width:80px;
-    opacity:0.75;
-}
-
-.corner1{
-    top:15px;
-    right:15px;
+    width:220px;
+    max-width:80%;
+    border-radius:25px;
+    margin-bottom:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 button{
+    padding:14px 28px;
     border:none;
-    padding:14px 26px;
-    border-radius:999px;
-    cursor:pointer;
+    border-radius:50px;
     font-size:1rem;
-    margin:20px 10px 0;
-    transition:all .3s ease;
+    cursor:pointer;
+    transition:.3s;
+    margin:10px;
+    font-weight:600;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#secretBtn{
+    background:#ef4444;
+    color:white;
 }
 
 #yesBtn{
-    background:#d62839;
+    background:#ef4444;
     color:white;
+    transform:scale(0.8);
 }
 
 #noBtn{
-    background:rgba(255,255,255,0.1);
-    color:white;
+    background:white;
+    color:#111;
+    transform:scale(1.4);
 }
 
 #popup{
@@ -95,8 +97,7 @@ button{
     top:20px;
     left:50%;
     transform:translateX(-50%);
-    background:rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
+    background:rgba(0,0,0,0.75);
     padding:12px 20px;
     border-radius:50px;
     opacity:0;
@@ -108,20 +109,16 @@ button{
     opacity:1;
 }
 
-.spider{
-    position:absolute;
-    font-size:2rem;
-    opacity:.4;
-    animation:float 5s infinite ease-in-out;
+canvas{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
 }
 
-.s1{top:8%; left:10%;}
-.s2{top:15%; right:12%;}
-.s3{bottom:10%; left:18%;}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
+.final-image{
+    width:280px;
+    max-width:90%;
+    border-radius:20px;
 }
 
 @keyframes fadeIn{
@@ -136,149 +133,283 @@ button{
 }
 </style>
 </head>
+
 <body>
+
+<canvas id="confetti"></canvas>
 
 <div id="popup"></div>
 
-<div class="spider s1">🕷️</div>
-<div class="spider s2">🕸️</div>
-<div class="spider s3">🕷️</div>
+<!-- PAGE 1 -->
 
-<div class="card" id="card">
+<div class="page" id="page1">
 
-<img src="cat5.png" class="corner corner1">
+    <img src="cat1.png" class="cat">
 
-<img src="cat1.png" class="cat">
+    <h1>pspsps...</h1>
 
-<h1>pspsps... bubu Aryan 🐱</h1>
+    <h1>Aryan bubuuu 🐱</h1>
 
-<p>
-Across every universe and every timeline,
-I'd still choose you.
-</p>
+    <p>
+        I have a very important secret for you.
+    </p>
 
-<br>
+    <br>
 
-<p style="font-size:1.2rem;">
-Will you go on a <b>Spider-Man date</b> with me? 🍿🕷️❤️
-</p>
-
-<button id="yesBtn" onclick="sayYes()">
-YES 😻
-</button>
-
-<button id="noBtn">
-NO 🙀
-</button>
+    <button id="secretBtn" onclick="goToPage2()">
+        🤫 Secret
+    </button>
 
 </div>
 
+
+<!-- PAGE 2 -->
+
+<div class="page hidden" id="page2">
+
+    <img src="cat1.png" class="cat" id="mainCat">
+
+    <h1>
+        Will you go on a Spider-Man date with me?
+        🍿🕷️❤️
+    </h1>
+
+    <br>
+
+    <button id="yesBtn" onclick="sayYes()">
+        YES 😻
+    </button>
+
+    <button id="noBtn">
+        NO 🙄
+    </button>
+
+</div>
+
+
+<!-- PAGE 3 -->
+
+<div class="page hidden" id="page3">
+
+    <img src="dancecat.gif" class="cat">
+
+    <h1>YAYYY ❤️</h1>
+
+    <p>
+        Our canon event has officially been scheduled.
+    </p>
+
+    <br>
+
+    <h2>
+        Spider-Man: Brand New Day
+    </h2>
+
+    <p style="font-size:1.3rem;">
+        📅 31 July 2025
+    </p>
+
+    <br>
+
+    <p>
+        Pick me up with the tickets, bubu. 🎟️🚗
+        <br><br>
+        I'll be ready. 🎀
+    </p>
+
+    <br>
+
+    <button onclick="goToPage4()">
+        Continue →
+    </button>
+
+</div>
+<!-- PAGE 4 -->
+
+<div class="page hidden" id="page4">
+
+    <img src="cat5.png" class="final-image">
+
+    <br><br>
+
+    <h1>
+        In every universe,
+    </h1>
+
+    <h1>
+        through every timeline,
+    </h1>
+
+    <br>
+
+    <h2>
+        I will always choose you. ❤️🕸️
+    </h2>
+
+    <br><br>
+
+    <p>
+        Love,<br>
+        Ishita ❤️
+    </p>
+
+</div>
+
+
 <script>
 
+const popup = document.getElementById("popup");
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const popup = document.getElementById("popup");
+const mainCat = document.getElementById("mainCat");
 
-let yesScale = 1;
+let noAttempts = 0;
+let yesScale = 0.8;
 
 const messages = [
     "Wrong answer detected 🚨",
     "The knife cat is watching 🔪🐱",
-    "Bubu, behave 😌",
-    "Recalculating... YES is the only option 🕷️",
+    "Reconsider, bubu 😌",
+    "Bubu, behave.",
+    "Tickets + pick up service required 🎟️🚗",
+    "Error 404: NO button not found 🤭",
     "The multiverse approves only one answer 🌌",
     "Don't make the cat cry 😿",
-    "Tickets + pick up service required 🎟️🚗",
-    "Reconsider, bubu 🥺",
-    "The cat is disappointed 😿",
-    "Be honest with yourself 😏",
-    "You know you want to click YES 😌",
-    "Across every universe, the answer is YES 🕸️",
-    "Aryan.exe is making the correct decision ❤️",
-    "Pick me up on 31 July 😤",
     "Spider-Man himself would click YES 🕷️",
-    "Error 404: NO button not found 🤭",
-    "Bubu, don't embarrass yourself 😌",
-    "The council of cats disapproves 🐈",
-    "Destiny has already been written ✨",
-    "Tickets won't buy themselves 🎟️"
+    "Pick me up on 31 July 😤"
 ];
 
 function showPopup(text){
-    popup.innerHTML = text;
+    popup.innerText = text;
     popup.classList.add("show");
 
     setTimeout(() => {
         popup.classList.remove("show");
-    }, 2000);
+    }, 1800);
+}
+
+function goToPage2(){
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+}
+
+function goToPage4(){
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
 }
 
 noBtn.addEventListener("mouseover", () => {
 
-    noBtn.style.position = "fixed";
-
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 80);
-
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    mainCat.src = "cat2.png";
 
     const randomMessage =
-        messages[Math.floor(Math.random()*messages.length)];
+        messages[Math.floor(Math.random() * messages.length)];
 
     showPopup(randomMessage);
 
-    yesScale += 0.12;
+    yesScale += 0.18;
 
-    yesBtn.style.transform = `scale(${yesScale})`;
+    yesBtn.style.transform =
+        `scale(${yesScale})`;
 
     yesBtn.innerHTML =
-        `YES 😻 (${Math.floor(yesScale*100)}% sure)`;
+        `YES 😻 (${Math.floor(yesScale * 100)}% sure)`;
+
+    noAttempts++;
+
+    if(noAttempts >= 2){
+
+        noBtn.style.position = "fixed";
+
+        const x =
+            Math.random() * (window.innerWidth - 120);
+
+        const y =
+            Math.random() * (window.innerHeight - 80);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
 });
 
 function sayYes(){
 
-document.getElementById("card").innerHTML = `
+    launchConfetti();
 
-<img src="cat4.png" class="cat">
+    document.getElementById("page2")
+        .classList.add("hidden");
 
-<h1>YAYYY ❤️</h1>
+    document.getElementById("page3")
+        .classList.remove("hidden");
+}
 
-<p style="font-size:1.1rem;">
-Our canon event has officially been scheduled.
-</p>
 
-<br>
+/* CONFETTI */
 
-<h2 style="color:#ff6b6b;">
-Spider-Man: Brand New Day
-</h2>
+function launchConfetti(){
 
-<p style="font-size:1.3rem;">
-📅 31 July 2025
-</p>
+    const canvas =
+        document.getElementById("confetti");
 
-<br>
+    const ctx =
+        canvas.getContext("2d");
 
-<p>
-Pick me up with the tickets, bubu 🎟️🚗
-<br><br>
-I'll be ready. 🎀
-</p>
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-<br>
+    let pieces = [];
 
-<p style="opacity:.8;">
-— Ishita ❤️
-</p>
+    for(let i=0;i<180;i++){
 
-<br>
+        pieces.push({
+            x: Math.random()*canvas.width,
+            y: Math.random()*canvas.height - canvas.height,
+            size: Math.random()*8 + 3,
+            speed: Math.random()*5 + 2
+        });
+    }
 
-<p>
-🕸️ See you in this universe and every other one.
-</p>
+    let animation = setInterval(() => {
 
-`;
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        pieces.forEach(p => {
+
+            p.y += p.speed;
+
+            ctx.fillStyle =
+                `hsl(${Math.random()*360},100%,50%)`;
+
+            ctx.fillRect(
+                p.x,
+                p.y,
+                p.size,
+                p.size
+            );
+        });
+
+        if(
+            pieces.every(
+                p => p.y > canvas.height
+            )
+        ){
+            clearInterval(animation);
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+        }
+
+    }, 30);
+
 }
 
 </script>
