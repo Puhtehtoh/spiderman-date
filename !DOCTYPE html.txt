@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e62429, #0c1b33);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: #e62429;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+
+        .spider {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="spider" style="top:10%; left:15%;">🕷️</div>
+<div class="spider" style="top:20%; right:20%;">🕸️</div>
+<div class="spider" style="bottom:15%; left:25%;">🕷️</div>
+
+<div class="card">
+    <h1>Hey You ❤️</h1>
+    <p>
+        In every universe, through every timeline,
+        I'd still choose you.
+    </p>
+
+    <p>
+        So... will you go on a <b>Spider-Man date</b> with me? 🍿🕷️
+    </p>
+
+    <button onclick="showMessage()">YES! 🥰</button>
+
+    <div id="message" class="hidden">
+        Yay! Our canon event is officially scheduled. ❤️🕸️
+    </div>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("message").style.display = "block";
+}
+</script>
+
+</body>
+</html>
