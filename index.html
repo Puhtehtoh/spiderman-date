@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Aryan Bubuuu ❤️</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 *{
     margin:0;
@@ -16,59 +20,157 @@
 
 body{
     font-family:'Poppins', sans-serif;
-    background: linear-gradient(135deg,#0f172a,#1e293b);
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(255,0,0,0.18),
+        transparent 35%),
+
+        radial-gradient(circle at bottom right,
+        rgba(59,130,246,0.18),
+        transparent 35%),
+
+        linear-gradient(
+            135deg,
+            #081120 0%,
+            #111827 50%,
+            #0f172a 100%
+        );
+
     color:white;
+
     min-height:100vh;
-    overflow:hidden;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
+    overflow:hidden;
 }
 
+/* FLOATING SPIDERS */
+
+.spider{
+    position:absolute;
+    font-size:2rem;
+    opacity:0.35;
+    animation: float 5s infinite ease-in-out;
+    z-index:0;
+}
+
+.s1{
+    top:10%;
+    left:8%;
+}
+
+.s2{
+    top:15%;
+    right:12%;
+}
+
+.s3{
+    bottom:12%;
+    left:18%;
+}
+
+.s4{
+    bottom:18%;
+    right:20%;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* MAIN CARD */
+
 .page{
+
     width:90%;
     max-width:650px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    border-radius:30px;
+
     padding:35px;
+
+    border-radius:30px;
+
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
-    animation: fadeIn 0.6s ease;
+
+    position:relative;
+
+    z-index:5;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(18px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4),
+        0 0 30px rgba(255,0,0,0.08);
+
+    animation: fadeIn 0.7s ease;
 }
 
 .hidden{
     display:none;
 }
 
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
 h1{
     font-size:2rem;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 p{
-    font-size:1.1rem;
+    color:#d1d5db;
     line-height:1.7;
-    color:#ddd;
+    font-size:1.05rem;
 }
 
 .cat{
     width:220px;
     max-width:80%;
-    border-radius:25px;
+    border-radius:22px;
     margin-bottom:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
 }
 
 button{
-    padding:14px 28px;
     border:none;
-    border-radius:50px;
-    font-size:1rem;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
     cursor:pointer;
-    transition:.3s;
-    margin:10px;
+
+    font-size:1rem;
+
     font-weight:600;
+
+    transition:0.3s ease;
+
+    margin:10px;
 }
 
 button:hover{
@@ -83,54 +185,66 @@ button:hover{
 #yesBtn{
     background:#ef4444;
     color:white;
+
     transform:scale(0.8);
 }
 
 #noBtn{
     background:white;
-    color:#111;
+    color:#111827;
+
     transform:scale(1.4);
 }
 
+/* POPUP */
+
 #popup{
+
     position:fixed;
-    top:20px;
+
+    top:25px;
+
     left:50%;
+
     transform:translateX(-50%);
-    background:rgba(0,0,0,0.75);
-    padding:12px 20px;
-    border-radius:50px;
+
+    background:rgba(0,0,0,0.8);
+
+    padding:14px 22px;
+
+    border-radius:999px;
+
     opacity:0;
-    transition:.3s;
-    z-index:999;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    transition:0.3s ease;
+
+    color:white;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.4);
 }
 
 .show{
-    opacity:1;
+    opacity:1 !important;
 }
 
 canvas{
     position:fixed;
     inset:0;
     pointer-events:none;
+    z-index:1000;
 }
 
 .final-image{
-    width:280px;
+    width:300px;
     max-width:90%;
     border-radius:20px;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
 </style>
 </head>
 
@@ -139,6 +253,11 @@ canvas{
 <canvas id="confetti"></canvas>
 
 <div id="popup"></div>
+
+<div class="spider s1">🕷️</div>
+<div class="spider s2">🕸️</div>
+<div class="spider s3">🕷️</div>
+<div class="spider s4">🕸️</div>
 
 <!-- PAGE 1 -->
 
@@ -156,47 +275,65 @@ canvas{
 
     <br>
 
-    <button id="secretBtn" onclick="goToPage2()">
+    <button
+        id="secretBtn"
+        onclick="goToPage2()">
+
         🤫 Secret
+
     </button>
 
 </div>
-
-
-<!-- PAGE 2 -->
+<!-- PAGE 2 : THE PROPOSAL -->
 
 <div class="page hidden" id="page2">
 
-    <img src="cat1.png" class="cat" id="mainCat">
+    <img
+        src="cat1.png"
+        class="cat"
+        id="mainCat">
 
     <h1>
-        Will you go on a Spider-Man date with me?
+        Will you go on a
+        Spider-Man date with me?
         🍿🕷️❤️
     </h1>
 
     <br>
 
-    <button id="yesBtn" onclick="sayYes()">
+    <button
+        id="yesBtn"
+        onclick="sayYes()">
+
         YES 😻
+
     </button>
 
-    <button id="noBtn">
+    <button
+        id="noBtn">
+
         NO 🙄
+
     </button>
 
 </div>
 
 
-<!-- PAGE 3 -->
+<!-- PAGE 3 : SUCCESS PAGE -->
 
 <div class="page hidden" id="page3">
 
-    <img src="dancecat.gif" class="cat">
+    <img
+        src="dancecat.gif"
+        class="cat">
 
-    <h1>YAYYY ❤️</h1>
+    <h1>
+        YAYYY ❤️
+    </h1>
 
     <p>
-        Our canon event has officially been scheduled.
+        Our canon event has officially
+        been scheduled.
     </p>
 
     <br>
@@ -205,15 +342,18 @@ canvas{
         Spider-Man: Brand New Day
     </h2>
 
-    <p style="font-size:1.3rem;">
+    <p style="font-size:1.2rem;">
         📅 31 July 2025
     </p>
 
     <br>
 
     <p>
-        Pick me up with the tickets, bubu. 🎟️🚗
+        Pick me up with the tickets,
+        bubu. 🎟️🚗
+
         <br><br>
+
         I'll be ready. 🎀
     </p>
 
@@ -224,11 +364,15 @@ canvas{
     </button>
 
 </div>
-<!-- PAGE 4 -->
+
+
+<!-- PAGE 4 : FINAL PAGE -->
 
 <div class="page hidden" id="page4">
 
-    <img src="cat5.png" class="final-image">
+    <img
+        src="cat5.png"
+        class="final-image">
 
     <br><br>
 
@@ -243,13 +387,15 @@ canvas{
     <br>
 
     <h2>
-        I will always choose you. ❤️🕸️
+        I will always choose you.
+        ❤️🕸️
     </h2>
 
     <br><br>
 
     <p>
-        Love,<br>
+        Love,
+        <br>
         Ishita ❤️
     </p>
 
@@ -258,52 +404,98 @@ canvas{
 
 <script>
 
-const popup = document.getElementById("popup");
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const mainCat = document.getElementById("mainCat");
+const popup =
+    document.getElementById("popup");
+
+const noBtn =
+    document.getElementById("noBtn");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+const mainCat =
+    document.getElementById("mainCat");
 
 let noAttempts = 0;
+
 let yesScale = 0.8;
 
 const messages = [
+
     "Wrong answer detected 🚨",
+
     "The knife cat is watching 🔪🐱",
+
     "Reconsider, bubu 😌",
+
     "Bubu, behave.",
+
     "Tickets + pick up service required 🎟️🚗",
+
     "Error 404: NO button not found 🤭",
+
     "The multiverse approves only one answer 🌌",
+
     "Don't make the cat cry 😿",
+
     "Spider-Man himself would click YES 🕷️",
+
     "Pick me up on 31 July 😤"
+
 ];
 
 function showPopup(text){
+
     popup.innerText = text;
+
     popup.classList.add("show");
 
-    setTimeout(() => {
+    clearTimeout(popup.timer);
+
+    popup.timer = setTimeout(() => {
+
         popup.classList.remove("show");
-    }, 1800);
+
+    }, 2000);
 }
 
 function goToPage2(){
-    document.getElementById("page1").classList.add("hidden");
-    document.getElementById("page2").classList.remove("hidden");
+
+    document
+        .getElementById("page1")
+        .classList.add("hidden");
+
+    document
+        .getElementById("page2")
+        .classList.remove("hidden");
 }
 
 function goToPage4(){
-    document.getElementById("page3").classList.add("hidden");
-    document.getElementById("page4").classList.remove("hidden");
+
+    document
+        .getElementById("page3")
+        .classList.add("hidden");
+
+    document
+        .getElementById("page4")
+        .classList.remove("hidden");
 }
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener(
+    "mouseover",
+
+() => {
 
     mainCat.src = "cat2.png";
 
     const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
+
+        messages[
+            Math.floor(
+                Math.random()
+                * messages.length
+            )
+        ];
 
     showPopup(randomMessage);
 
@@ -313,60 +505,95 @@ noBtn.addEventListener("mouseover", () => {
         `scale(${yesScale})`;
 
     yesBtn.innerHTML =
-        `YES 😻 (${Math.floor(yesScale * 100)}% sure)`;
+        `YES 😻 (${Math.floor(
+            yesScale * 100
+        )}% sure)`;
 
     noAttempts++;
 
     if(noAttempts >= 2){
 
-        noBtn.style.position = "fixed";
+        noBtn.style.position =
+            "fixed";
 
         const x =
-            Math.random() * (window.innerWidth - 120);
+            Math.random()
+            * (window.innerWidth - 120);
 
         const y =
-            Math.random() * (window.innerHeight - 80);
+            Math.random()
+            * (window.innerHeight - 80);
 
-        noBtn.style.left = x + "px";
-        noBtn.style.top = y + "px";
+        noBtn.style.left =
+            x + "px";
+
+        noBtn.style.top =
+            y + "px";
     }
+
 });
 
 function sayYes(){
 
     launchConfetti();
 
-    document.getElementById("page2")
+    document
+        .getElementById("page2")
         .classList.add("hidden");
 
-    document.getElementById("page3")
+    document
+        .getElementById("page3")
         .classList.remove("hidden");
 }
-
-
-/* CONFETTI */
+    /* ========================= */
+/* 🎉 CONFETTI ANIMATION 🎉 */
+/* ========================= */
 
 function launchConfetti(){
 
     const canvas =
-        document.getElementById("confetti");
+        document.getElementById(
+            "confetti"
+        );
 
     const ctx =
         canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
 
     let pieces = [];
 
-    for(let i=0;i<180;i++){
+    for(let i = 0; i < 200; i++){
 
         pieces.push({
-            x: Math.random()*canvas.width,
-            y: Math.random()*canvas.height - canvas.height,
-            size: Math.random()*8 + 3,
-            speed: Math.random()*5 + 2
+
+            x:
+                Math.random()
+                * canvas.width,
+
+            y:
+                Math.random()
+                * canvas.height
+                - canvas.height,
+
+            size:
+                Math.random()
+                * 8 + 3,
+
+            speed:
+                Math.random()
+                * 5 + 2,
+
+            color:
+                `hsl(${
+                    Math.random()*360
+                },100%,50%)`
         });
+
     }
 
     let animation = setInterval(() => {
@@ -378,27 +605,38 @@ function launchConfetti(){
             canvas.height
         );
 
-        pieces.forEach(p => {
+        pieces.forEach(piece => {
 
-            p.y += p.speed;
+            piece.y +=
+                piece.speed;
 
             ctx.fillStyle =
-                `hsl(${Math.random()*360},100%,50%)`;
+                piece.color;
 
             ctx.fillRect(
-                p.x,
-                p.y,
-                p.size,
-                p.size
+
+                piece.x,
+
+                piece.y,
+
+                piece.size,
+
+                piece.size
             );
+
         });
 
         if(
             pieces.every(
-                p => p.y > canvas.height
+                p =>
+                p.y >
+                canvas.height
             )
         ){
-            clearInterval(animation);
+
+            clearInterval(
+                animation
+            );
 
             ctx.clearRect(
                 0,
@@ -406,11 +644,35 @@ function launchConfetti(){
                 canvas.width,
                 canvas.height
             );
+
         }
 
-    }, 30);
+    },30);
 
 }
+
+/* ========================= */
+/* Resize canvas on resize   */
+/* ========================= */
+
+window.addEventListener(
+    "resize",
+
+    () => {
+
+        const canvas =
+            document.getElementById(
+                "confetti"
+            );
+
+        canvas.width =
+            window.innerWidth;
+
+        canvas.height =
+            window.innerHeight;
+    }
+
+);
 
 </script>
 
