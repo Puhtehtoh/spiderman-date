@@ -1,105 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Message ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bubu 🕷️❤️</title>
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #e62429, #0c1b33);
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap');
 
-        .card {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-            color: white;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
+body{
+    background: linear-gradient(135deg,#0f0f12,#1b1b22);
+    color:white;
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
+.card{
+    width:90%;
+    max-width:600px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:30px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    animation:fadeIn 1s ease;
+    position:relative;
+}
 
-        button {
-            margin-top: 25px;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            background: #e62429;
-            color: white;
-            transition: 0.3s;
-        }
+h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+    font-size:2.2rem;
+}
 
-        button:hover {
-            transform: scale(1.05);
-        }
+p{
+    color:#d8d8d8;
+    line-height:1.7;
+}
 
-        .hidden {
-            display: none;
-            margin-top: 20px;
-            font-size: 1.3rem;
-        }
+.cat{
+    width:180px;
+    height:auto;
+    border-radius:20px;
+    margin:15px auto;
+    display:block;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
 
-        .spider {
-            position: absolute;
-            font-size: 2rem;
-            animation: float 5s infinite ease-in-out;
-        }
+.corner{
+    position:absolute;
+    width:80px;
+    opacity:0.75;
+}
 
-        @keyframes float {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-    </style>
+.corner1{
+    top:15px;
+    right:15px;
+}
+
+button{
+    border:none;
+    padding:14px 26px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:1rem;
+    margin:20px 10px 0;
+    transition:all .3s ease;
+}
+
+#yesBtn{
+    background:#d62839;
+    color:white;
+}
+
+#noBtn{
+    background:rgba(255,255,255,0.1);
+    color:white;
+}
+
+#popup{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    padding:12px 20px;
+    border-radius:50px;
+    opacity:0;
+    transition:.3s;
+    z-index:999;
+}
+
+.show{
+    opacity:1;
+}
+
+.spider{
+    position:absolute;
+    font-size:2rem;
+    opacity:.4;
+    animation:float 5s infinite ease-in-out;
+}
+
+.s1{top:8%; left:10%;}
+.s2{top:15%; right:12%;}
+.s3{bottom:10%; left:18%;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
 </head>
 <body>
 
-<div class="spider" style="top:10%; left:15%;">🕷️</div>
-<div class="spider" style="top:20%; right:20%;">🕸️</div>
-<div class="spider" style="bottom:15%; left:25%;">🕷️</div>
+<div id="popup"></div>
 
-<div class="card">
-    <h1>Hey You ❤️</h1>
-    <p>
-        In every universe, through every timeline,
-        I'd still choose you.
-    </p>
+<div class="spider s1">🕷️</div>
+<div class="spider s2">🕸️</div>
+<div class="spider s3">🕷️</div>
 
-    <p>
-        So... will you go on a <b>Spider-Man date</b> with me? 🍿🕷️
-    </p>
+<div class="card" id="card">
 
-    <button onclick="showMessage()">YES! 🥰</button>
+<img src="cat5.png" class="corner corner1">
 
-    <div id="message" class="hidden">
-        Yay! Our canon event is officially scheduled. ❤️🕸️
-    </div>
+<img src="cat1.png" class="cat">
+
+<h1>pspsps... bubu Aryan 🐱</h1>
+
+<p>
+Across every universe and every timeline,
+I'd still choose you.
+</p>
+
+<br>
+
+<p style="font-size:1.2rem;">
+Will you go on a <b>Spider-Man date</b> with me? 🍿🕷️❤️
+</p>
+
+<button id="yesBtn" onclick="sayYes()">
+YES 😻
+</button>
+
+<button id="noBtn">
+NO 🙀
+</button>
+
 </div>
 
 <script>
-function showMessage() {
-    document.getElementById("message").style.display = "block";
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const popup = document.getElementById("popup");
+
+let yesScale = 1;
+
+const messages = [
+    "Wrong answer detected 🚨",
+    "The knife cat is watching 🔪🐱",
+    "Bubu, behave 😌",
+    "Recalculating... YES is the only option 🕷️",
+    "The multiverse approves only one answer 🌌",
+    "Don't make the cat cry 😿",
+    "Tickets + pick up service required 🎟️🚗",
+    "Reconsider, bubu 🥺",
+    "The cat is disappointed 😿",
+    "Be honest with yourself 😏",
+    "You know you want to click YES 😌",
+    "Across every universe, the answer is YES 🕸️",
+    "Aryan.exe is making the correct decision ❤️",
+    "Pick me up on 31 July 😤",
+    "Spider-Man himself would click YES 🕷️",
+    "Error 404: NO button not found 🤭",
+    "Bubu, don't embarrass yourself 😌",
+    "The council of cats disapproves 🐈",
+    "Destiny has already been written ✨",
+    "Tickets won't buy themselves 🎟️"
+];
+
+function showPopup(text){
+    popup.innerHTML = text;
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 2000);
 }
+
+noBtn.addEventListener("mouseover", () => {
+
+    noBtn.style.position = "fixed";
+
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    const randomMessage =
+        messages[Math.floor(Math.random()*messages.length)];
+
+    showPopup(randomMessage);
+
+    yesScale += 0.12;
+
+    yesBtn.style.transform = `scale(${yesScale})`;
+
+    yesBtn.innerHTML =
+        `YES 😻 (${Math.floor(yesScale*100)}% sure)`;
+});
+
+function sayYes(){
+
+document.getElementById("card").innerHTML = `
+
+<img src="cat4.png" class="cat">
+
+<h1>YAYYY ❤️</h1>
+
+<p style="font-size:1.1rem;">
+Our canon event has officially been scheduled.
+</p>
+
+<br>
+
+<h2 style="color:#ff6b6b;">
+Spider-Man: Brand New Day
+</h2>
+
+<p style="font-size:1.3rem;">
+📅 31 July 2025
+</p>
+
+<br>
+
+<p>
+Pick me up with the tickets, bubu 🎟️🚗
+<br><br>
+I'll be ready. 🎀
+</p>
+
+<br>
+
+<p style="opacity:.8;">
+— Ishita ❤️
+</p>
+
+<br>
+
+<p>
+🕸️ See you in this universe and every other one.
+</p>
+
+`;
+}
+
 </script>
 
 </body>
